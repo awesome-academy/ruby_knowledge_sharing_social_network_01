@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyKnowledgeSharingSocialNetwork01</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <title><%= full_title yield :title %> </title>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render "layouts/head" %>
+    <%= render "layouts/shim" %>
   </head>
 
   <body>
+    <%= render "layouts/sidebar" %>
+    <%= render "layouts/header" %>
+    <div class="container">
     <%= yield %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": "reload" %>
   </body>
 </html>

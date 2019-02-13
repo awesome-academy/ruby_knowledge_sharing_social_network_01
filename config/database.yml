@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: 573914682
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: ruby_knowledge_sharing_social_network_01_db
+
+test:
+  <<: *default
+  database: ruby_knowledge_sharing_social_network_01_test
+
+production:
+  <<: *default
+  database: ruby_knowledge_sharing_social_network_01_production
+  username: ruby_knowledge_sharing_social_network_01
+  password: <%= ENV['RUBY_KNOWLEDGE_SHARING_SOCIAL_NETWORK_01_DATABASE_PASSWORD'] %>

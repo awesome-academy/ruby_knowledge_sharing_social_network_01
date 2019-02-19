@@ -1,4 +1,9 @@
 /*
+ *= require dist/css/bootstrap-reboot.css
+ *= require dist/css/bootstrap.css
+ *= require dist/css/bootstrap-grid.css
+ *= require main.min.css
+ *= require fonts.min.css
  *= require_tree .
  *= require_self
- */
+*/

@@ -1,0 +1,48 @@
+<%= form_with model: @user, class: :content, local: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="row">
+    <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="form-group label-floating is-empty">
+        <label class="control-label">Your Email</label>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group label-floating is-empty">
+        <label class="control-label">Your Password</label>
+        <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="form-group label-floating is-empty">
+        <label class="control-label">Password Confirmation</label>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+    </div>
+    <%= f.fields_for :profile do |profile|  %>
+      <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group label-floating is-empty">
+          <label class="control-label">First Name</label>
+          <%= profile.text_field :first_name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="form-group label-floating is-empty">
+          <label class="control-label">Last Name</label>
+          <%= profile.text_field :last_name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="form-group date-time-picker label-floating">
+          <label class="control-label">Your Birthday</label>
+          <%= profile.text_field :birthday, name: "datetimepicker", value: "09/01/1997" %>
+          <span class="input-group-addon">
+            <svg class="olymp-calendar-icon"><use xlink:href="svg-icospricons.svg#olymp-calendar-icon"></use></svg>
+          </span>
+        </div>
+      </div>
+    <% end %>
+    <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <%= f.submit "Complete Registration!", class: "btn btn-purple btn-lg full-width" %>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_064533) do
+ActiveRecord::Schema.define(version: 2019_02_20_085123) do
 
   create_table "comment_hierarchies", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "ancestor_id", null: false
@@ -59,7 +59,9 @@ ActiveRecord::Schema.define(version: 2019_02_20_064533) do
     t.string "last_name"
     t.date "birthday"
     t.string "avatar_url"
+    t.string "cover_url"
     t.string "location"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,6 +95,8 @@ ActiveRecord::Schema.define(version: 2019_02_20_064533) do
     t.integer "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,1 +1,5 @@
 en:
+  shared:
+    error_messages:
+      error1: The form contains
+      error2: error

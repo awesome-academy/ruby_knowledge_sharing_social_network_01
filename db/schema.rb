@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "group_admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,14 +59,14 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "type"
+    t.integer "post_type"
     t.text "content"
     t.integer "group_id"
     t.string "title"
     t.integer "visibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_posts_on_type"
+    t.index ["post_type"], name: "index_posts_on_post_type"
     t.index ["visibility"], name: "index_posts_on_visibility"
   end
 
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
     t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_used_tags_on_tag_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,6 +126,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
     t.integer "voted_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["voted_type"], name: "index_votes_on_voted_type"
   end
 
 end

@@ -8,5 +8,6 @@ class CreateVotes < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :votes, :voted_type
   end
 end

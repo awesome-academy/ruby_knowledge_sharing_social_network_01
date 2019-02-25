@@ -1,1 +1,42 @@
 vi:
+  shared:
+    error_messages:
+      error1: Thông tin nhập có
+      error2: lỗi
+
+  pages:
+    index:
+      title: TRANG TIN
+
+  layouts:
+    sidebar:
+      open_menu: Mở Menu
+      collapse_menu: Đóng Menu
+      new_feed: Trang Tin
+      groups: Nhóm
+      community_badges: Huy Hiệu
+      account_stats: Thông Tin Tài Khoản
+      complete_profile: Hoàn thiện trang cá nhân của bạn để mọi người hiểu rõ bạn hơn!
+      profile_completion: Độ hoàn thành Profile
+
+    header:
+      search_people: Tìm bạn hoặc nhóm..
+      view_all_notifications: Hiển thị toàn bộ thông báo
+      find_friends: Tìm Bạn
+
+    mini_profile:
+      profile_settings: Cài Đặt
+      create_group: Tạo Nhóm
+      log_out: Đăng Xuất
+      your_account: Tài Khoản
+      custom_status: Trạng Thái
+      about_olympus: Về Olympus
+      terms_conditions: Điều Khoản
+      faqs: FAQs
+      contact: Liên Hệ
+
+    notification_form:
+      title: Thông báo
+      mark: Đánh dấu tất cả đã đọc
+      settings: Cài đặt
+      view_all: Hiển thị tất cả thông báo

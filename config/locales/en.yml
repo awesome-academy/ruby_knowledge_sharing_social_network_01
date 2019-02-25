@@ -40,3 +40,8 @@ en:
       mark: Mark all as read
       settings: Settings
       view_all: View All Notifications
+
+  post:
+    visibility:
+      everyone: Everyone
+      just_me: Just me

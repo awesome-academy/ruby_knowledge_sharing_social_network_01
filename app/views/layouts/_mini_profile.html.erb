@@ -17,12 +17,12 @@
           </li>
           <li>
             <%= link_to "#" do %>
-              <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-star-icon') %>"></use></svg>
+              <svg class="olymp-star-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-star-icon') %>"></use></svg>
               <span><%= t ".create_group" %></span>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to signout_path, method: :delete do %>
               <svg class="olymp-logout-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-logout-icon') %>"></use></svg>
               <span><%= t ".log_out" %></span>
             <% end %>

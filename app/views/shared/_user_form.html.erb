@@ -34,10 +34,7 @@
       <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="form-group date-time-picker label-floating">
           <label class="control-label">Your Birthday</label>
-          <%= profile.text_field :birthday, name: "datetimepicker", value: "09/01/1997" %>
-          <span class="input-group-addon">
-            <svg class="olymp-calendar-icon"><use xlink:href="svg-icospricons.svg#olymp-calendar-icon"></use></svg>
-          </span>
+          <%= profile.date_field :birthday %>
         </div>
       </div>
     <% end %>

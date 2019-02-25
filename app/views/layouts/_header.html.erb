@@ -17,25 +17,36 @@
 
     <%= link_to t(".find_friends"), "#", class: "link-find-friend" %>
 
-    <div class="control-block">
+    <% if logged_in? %>
+      <div class="control-block">
 
-      <%= link_to home_path do %>
+        <%= link_to home_path do %>
+          <div class="control-icon more has-items">
+            <svg class="olymp-happy-face-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-newsfeed-icon') %>"></use></svg>
+          </div>
+        <% end %>
+
         <div class="control-icon more has-items">
-          <svg class="olymp-happy-face-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-newsfeed-icon') %>"></use></svg>
+          <svg class="olymp-thunder-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-thunder-icon') %>"></use></svg>
+
+          <div class="label-avatar bg-primary">8</div>
+
+          <%= render "layouts/notification_form" %>
         </div>
-      <% end %>
 
-      <div class="control-icon more has-items">
-        <svg class="olymp-thunder-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-thunder-icon') %>"></use></svg>
+        <%= render "layouts/mini_profile" %>
 
-        <div class="label-avatar bg-primary">8</div>
-
-        <%= render "layouts/notification_form" %>
       </div>
-
-      <%= render "layouts/mini_profile" %>
-
-    </div>
+    <% else %>
+      <div class="control-block">
+        <div class="control-icon more has-items">
+          <%= link_to signin_path, class: "link-find-friend" do %>
+            <svg class="olymp-thunder-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-login-icon') %>"></use></svg>
+            Signin
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
 </header>
@@ -49,7 +60,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#request" role="tab">
           <div class="control-icon has-items">
-            <svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+            <svg class="olymp-happy-face-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-happy-face-icon') %>"></use></svg>
             <div class="label-avatar bg-blue">6</div>
           </div>
         </a>
@@ -58,7 +69,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#chat" role="tab">
           <div class="control-icon has-items">
-            <svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+            <svg class="olymp-chat---messages-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-chat---messages-icon') %>"></use></svg>
             <div class="label-avatar bg-purple">2</div>
           </div>
         </a>
@@ -67,7 +78,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#notification" role="tab">
           <div class="control-icon has-items">
-            <svg class="olymp-thunder-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+            <svg class="olymp-thunder-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-thunder-icon') %>"></use></svg>
             <div class="label-avatar bg-primary">8</div>
           </div>
         </a>
@@ -75,8 +86,8 @@
 
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#search" role="tab">
-          <svg class="olymp-magnifying-glass-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-          <svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+          <svg class="olymp-magnifying-glass-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-magnifying-glass-icon') %>"></use></svg>
+          <svg class="olymp-close-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-close-icon') %>"></use></svg>
         </a>
       </li>
     </ul>

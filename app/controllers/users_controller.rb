@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create user_params
     if @user.save
+      log_in @user
       redirect_to @user
     else
       flash.now[:danger] = t ".fail"
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :email, :password, :password_confirmation,
-      profile_attributes: [:id, :first_name, :last_name, :birth_day]
+      profile_attributes: [:id, :first_name, :last_name, :birthday]
   end
 
   def search_user

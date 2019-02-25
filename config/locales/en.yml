@@ -3,3 +3,40 @@ en:
     error_messages:
       error1: The form contains
       error2: error
+
+  pages:
+    index:
+      title: NEWFEED
+
+  layouts:
+    sidebar:
+      open_menu: Open Menu
+      collapse_menu: Collapse Menu
+      new_feed: New Feed
+      groups: Groups
+      community_badges: Community Badges
+      account_stats: Account Stats
+      complete_profile: Complete your profile so people can know more about you!
+      profile_completion: Profile Completion
+
+    header:
+      search_people: Search here people or pages...
+      view_all_notifications: View All Notifications
+      find_friends: Find Friends
+
+    mini_profile:
+      profile_settings: Profile Settings
+      create_group: Create Group
+      log_out: Log Out
+      your_account: Your Account
+      custom_status: Custom Status
+      about_olympus: About Olympus
+      terms_conditions: Terms and Conditions
+      faqs: FAQs
+      contact: Contact
+
+    notification_form:
+      title: Notifications
+      mark: Mark all as read
+      settings: Settings
+      view_all: View All Notifications

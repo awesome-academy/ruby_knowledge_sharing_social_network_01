@@ -1,0 +1,75 @@
+<div class="author-page author vcard inline-items more">
+  <div class="author-thumb">
+    <img alt="author" src="img/author-page.jpg" class="avatar">
+    <span class="icon-status online"></span>
+    <div class="more-dropdown more-with-triangle">
+      <div class="mCustomScrollbar" data-mcs-theme="dark">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t ".your_account" %></h6>
+        </div>
+
+        <ul class="account-settings">
+          <li>
+            <%= link_to "#" do%>
+              <svg class="olymp-menu-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-menu-icon') %>"></use></svg>
+              <span><%= t ".profile_settings" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-star-icon') %>"></use></svg>
+              <span><%= t ".create_group" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <svg class="olymp-logout-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-logout-icon') %>"></use></svg>
+              <span><%= t ".log_out" %></span>
+            <% end %>
+          </li>
+        </ul>
+
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t ".custom_status" %></h6>
+        </div>
+
+        <form class="form-group with-button custom-status">
+          <input class="form-control" placeholder="" type="text" value="Space Cowboy">
+
+          <button class="bg-purple">
+            <svg class="olymp-check-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-check-icon') %>"></use></svg>
+          </button>
+        </form>
+
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t ".about_olympus" %></h6>
+        </div>
+
+        <ul>
+          <li>
+            <%= link_to "#" do %>
+              <span><%= t ".terms_conditions" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <span><%= t ".faqs" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <span><%= t ".contact" %></span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <%= link_to "#", class: "author-name fn" do %>
+    <div class="author-title">
+      James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-dropdown-arrow-icon') %>"></use></svg>
+    </div>
+    <span class="author-subtitle">SPACE COWBOY</span>
+  <% end %>
+</div>

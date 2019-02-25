@@ -45,3 +45,7 @@ en:
     visibility:
       everyone: Everyone
       just_me: Just me
+
+  posts:
+    new:
+      tag_intruction: "Tag your post (Press ',' to create new tag):"

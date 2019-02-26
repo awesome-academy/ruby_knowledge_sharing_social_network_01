@@ -1,3 +1,5 @@
+//= require ckeditor/init
+//= require ckeditor/config
 //= require webfontloader.min.js
 //= require jquery-3.2.1.js
 //= require jquery.appear.js

@@ -40,3 +40,8 @@ vi:
       mark: Đánh dấu tất cả đã đọc
       settings: Cài đặt
       view_all: Hiển thị tất cả thông báo
+
+  post:
+    visibility:
+      everyone: Mọi người
+      just_me: Mình tôi

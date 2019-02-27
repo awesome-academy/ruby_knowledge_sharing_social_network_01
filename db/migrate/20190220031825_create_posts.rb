@@ -6,8 +6,11 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :content
       t.integer :group_id
       t.string :title
+      t.integer :visibility
 
       t.timestamps
     end
+    add_index :posts, :type
+    add_index :posts, :visibility
   end
 end

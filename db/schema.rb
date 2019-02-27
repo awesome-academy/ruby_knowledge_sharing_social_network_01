@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
     t.text "content"
     t.integer "group_id"
     t.string "title"
+    t.integer "visibility"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_posts_on_type"
+    t.index ["visibility"], name: "index_posts_on_visibility"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

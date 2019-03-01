@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     delete "/signout", to: "sessions#destroy"
     get "/posting", to: "posts#new"
     get "/asking", to: "questions#new"
+    post "/asking", to: "questions#create"
     resources :users
     resources :posts, only: %i(create destroy)
   end

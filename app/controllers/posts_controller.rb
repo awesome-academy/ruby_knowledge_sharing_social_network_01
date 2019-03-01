@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build post_params
+    @post.post!
 
     if @post.save
       tagging

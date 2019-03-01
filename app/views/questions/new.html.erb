@@ -1,6 +1,6 @@
 <div class="ui-block">
   <div class="ui-block-content">
-    <%= form_with model: @question, class: "needs-validation", local: true do |f| %>
+    <%= form_with model: @question, url: asking_path, class: "needs-validation", local: true do |f| %>
       <div class="crumina-module crumina-heading with-title-decoration">
         <h5 class="heading-title"><%= t ".write_question" %></h5>
       </div>
@@ -15,14 +15,12 @@
           </div>
         </div>
 
-        <div class="col col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
-          <div class="form-group label-floating">
-            <label class="control-label"><%= t ".tag_your_question " %></label>
-            <%= f.text_field :tag, class: "form-control" %>
-          </div>
+        <div class="col col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12 tags-input">
+          <label class="control-label"><%= t ".tag_intruction" %>&emsp;</label>
         </div>
 
         <div class="col col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
+          <br>
           <%= f.cktext_area :content, class: "ckeditor", rows: 10 %>
           <br>
           <button class="btn btn-md btn-primary" type="submit"><%= t ".submit" %></button>

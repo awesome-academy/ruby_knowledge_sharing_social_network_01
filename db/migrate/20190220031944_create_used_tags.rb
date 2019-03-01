@@ -7,5 +7,6 @@ class CreateUsedTags < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :used_tags, :tag_id
   end
 end

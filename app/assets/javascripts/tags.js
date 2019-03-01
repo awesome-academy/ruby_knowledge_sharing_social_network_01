@@ -15,9 +15,8 @@
     let enteredTags = mainInput.value.split(',');
     if (enteredTags.length > 1) {
       enteredTags.forEach(function (t) {
-        let filteredTag = filterTag(t);
-        if (filteredTag.length > 0)
-          addTag(filteredTag);
+        if (t.length > 0)
+          addTag(t);
       });
       mainInput.value = '';
     }
@@ -69,9 +68,5 @@
       tagsList.push(t.text);
     });
     hiddenInput.value = tagsList.join(',');
-  }
-
-  function filterTag(tag) {
-    return tag.replace(/[^\w -]/g, '').trim().replace(/\W+/g, '-');
   }
 });

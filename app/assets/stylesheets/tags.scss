@@ -1,0 +1,21 @@
+$orange: #ff5e3a;
+.tags-input .tag {
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 0.5em 0.75em;
+  margin: 0.25em 0.1em;
+  display: inline-block;
+  background-color: $orange;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  color: white
+}
+
+.tags-input .tag .close-sign::after {
+  content: '×';
+  font-weight: bold;
+  display: inline-block;
+  transform: scale(1);
+  margin-left: 0.75em;
+  margin-top: 0px
+}

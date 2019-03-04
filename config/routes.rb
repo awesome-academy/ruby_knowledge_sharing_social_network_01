@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     get "/asking", to: "questions#new"
     post "/asking", to: "questions#create"
     resources :users
-    resources :posts, only: %i(create destroy)
+    resources :posts, only: %i(create show destroy)
   end
 end

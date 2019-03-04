@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :list_visibility, only: %i(new create)
-  before_action :logged_in_user
+  before_action :logged_in_user, only: %i(new create)
+  before_action :search_post, only: %i(show)
+  before_action :featured_post_list, only: %i(show)
 
   def new
     @post = Post.new
@@ -19,6 +21,8 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   private
 
@@ -47,5 +51,17 @@ class PostsController < ApplicationController
         flash.now[:danger] = t(".create_tag_fail") + @tag.name
       end
     end
+  end
+
+  def search_post
+    @post = Post.find_by id: params[:id]
+
+    return if @post
+    flash[:danger] = t "post_not_found"
+    redirect_to home_path
+  end
+
+  def featured_post_list
+    @featured_post_list = Post.first 3
   end
 end

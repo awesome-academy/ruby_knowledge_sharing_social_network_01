@@ -8427,6 +8427,11 @@ ol ol li {
   background-color: #38bff1
 }
 
+.post-control-button .btn-control.bg-like,
+.post-control-button .btn-control.bg-like:hover {
+  background-color: white;
+}
+
 .post-control-button .btn-control svg {
   width: 18px;
   height: 18px
@@ -10307,6 +10312,18 @@ ol ol li {
 .open-topic-table .author-name:hover,
 .reply-topic {
   color: #ff5e3a
+}
+
+.blog-post .tag {
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 0.5em 0.75em;
+  margin: 0.25em 0.1em;
+  display: inline-block;
+  background-color: #ff5e3a;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  color: white
 }
 
 .open-topic-table thead th.author {
@@ -12781,6 +12798,10 @@ ol ol li {
 
 .bg-twitter {
   background-color: #38bff1
+}
+
+.bg-love {
+  background-color: #ff5e3a;
 }
 
 .bg-dribbble {

@@ -120,12 +120,13 @@ ActiveRecord::Schema.define(version: 2019_02_22_021912) do
   end
 
   create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "type"
+    t.integer "vote_type"
     t.integer "user_id"
     t.integer "voted_id"
     t.integer "voted_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["vote_type"], name: "index_votes_on_vote_type"
     t.index ["voted_type"], name: "index_votes_on_voted_type"
   end
 

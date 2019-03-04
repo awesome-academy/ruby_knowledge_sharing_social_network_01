@@ -1,0 +1,21 @@
+<% provide :title, t(".title") %>
+<div class="row mt50">
+  <div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+    <div class="ui-block">
+      <article class="hentry blog-post single-post single-post-v3">
+        <%= render "posts/post_form" %>
+      </article>
+    </div>
+  </div>
+  <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+    <aside>
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"><%= t ".featured_posts" %></h6>
+        </div>
+      </div>
+      <%= render "posts/featured_posts_form" %>
+    </aside>
+  </div>
+
+</div>

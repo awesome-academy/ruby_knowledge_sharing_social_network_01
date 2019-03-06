@@ -1,0 +1,41 @@
+<% if @featured_post_list.any? %>
+  <% @featured_post_list.each do |post| %>
+    <div class="ui-block">
+      <article class="hentry blog-post blog-post-v3 featured-post-item">
+        <div class="post-content">
+
+          <div class="author-date">
+            by
+            <a class="h6 post__author-name fn" href="#"><%= post.user.profile.first_name %></a>
+            <div class="post__date">
+              - <%= time_ago_in_words post.created_at %> <%= t ".ago" %>
+            </div>
+          </div>
+          <a href="#" class="h4 post-title">
+            <%= post.title %><br>
+            <% post.used_tags.each do |tag| %>
+              <span class="tag">
+                <%= tag.tag.name %>
+              </span>
+            <% end %>
+          </a>
+
+          <div>
+            <div>
+                <img src="<%= asset_path('icon-chat26.png') %>" alt="icon">
+                <%= post.votes.where(vote_type: "upvote").count %>&nbsp;&nbsp;
+                <img src="<%= asset_path('icon-chat27.png') %>" alt="icon">
+                <%= post.votes.where(vote_type: "upvote").count %>&nbsp;&nbsp;
+                <img src="<%= asset_path('icon-chat29.png') %>" alt="icon">
+                <%= post.votes.where(vote_type: "downvote").count %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" class="post-add-icon inline-items">
+                  <svg class="olymp-speech-balloon-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-speech-balloon-icon') %>"></use></svg>
+                  <span><%= @post.comments.count %></span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,98 @@
+<div class="author-date" style="margin-bottom: 20px;">
+  <div class="author-thumb">
+    <%= image_tag("", alt: "author", class: "avatar") %>
+  </div>
+  <% if @post.question? %>
+    asked by
+  <% else %>
+    posted by
+  <% end %>
+  <a class="h6 post__author-name fn" href="#"><%= @post.user.profile.first_name %></a>
+  <div class="post__date" style="margin-right: 10px;">
+    <time class="published">
+      -   <%= time_ago_in_words @post.created_at %> <%= t ".ago" %>
+    </time>
+  </div>
+
+  <%= link_to t(".follow"), "#", class: "post-category bg-primary" %>
+</div>
+
+<% if @post.question? %>
+  <%= link_to t(".question_tag"), "#", class: "post-category bg-primary"%>
+<% else %>
+  <%= link_to t(".post_tag"), "#", class: "post-category bg-primary"%>
+<% end %>
+
+<ul class="filter-icons">
+  <li>
+    <%= link_to "", class: "post-add-icon inline-items" do %>
+      <%= image_tag "icon-chat26.png", alt: "icon" %>
+      <span><%= @post.votes.where(vote_type: "upvote").count %></span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "", class: "post-add-icon inline-items" do %>
+      <%= image_tag "icon-chat27.png", alt: "icon" %>
+      <span><%= @post.votes.where(vote_type: "upvote").count %></span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "", class: "post-add-icon inline-items" do %>
+      <%= image_tag "icon-chat29.png", alt: "icon" %>
+      <span><%= @post.votes.where(vote_type: "downvote").count %></span>
+    <% end %>
+  </li>
+</ul>
+
+<h1 class="post-title" style="margin-bottom: 0px;"><%= @post.title %></h1>
+<ul>
+  <% @post.used_tags.each do |tag| %>
+    <span class="tag">
+      <%= tag.tag.name %>
+    </span>
+  <% end %>
+</ul>
+
+<div class="post-content-wrap">
+
+  <div class="control-block-button post-control-button">
+    <%= link_to "#", class: "post-add-icon inline-items" do %>
+      <svg class="olymp-speech-balloon-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-speech-balloon-icon') %>"></use></svg>
+      <span><%= @post.comments.count %></span>
+    <% end %>
+
+    <%= link_to "#", class: "btn btn-control has-i bg-love", title: t(".love_button_title") do %>
+      <svg class="olymp-speech-balloon-icon"><use xlink:href="<%= asset_path('sprites/icons.svg#olymp-like-post-icon') %>"></use></svg>
+    <% end %>
+
+    <%= link_to "#", class: "btn btn-control has-i bg-facebook", title: t(".facebook_button_title") do %>
+      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+    <% end %>
+
+    <%= link_to "#", class: "btn btn-control has-i bg-twitter", title: t(".twitter_button_title") do %>
+      <i class="fab fa-twitter" aria-hidden="true"></i>
+    <% end %>
+  </div>
+
+  <div class="post-content">
+    <%= render html: @post.content.html_safe %>
+  </div>
+</div>
+
+<div class="choose-reaction reaction-colored">
+  <div class="title">Choose your <span>Evaluation!</span></div>
+  <ul>
+    <li>
+      <%= link_to "#", class: "post-add-icon inline-items" do %>
+        <%= image_tag "icon-chat27.png", alt: "icon" %>
+        <span><%= @post.votes.where(vote_type: 1).count %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "post-add-icon inline-items" do %>
+        <%= image_tag "icon-chat29.png", alt: "icon" %>
+        <span><%= @post.votes.where(vote_type: 2).count %></span>
+      <% end %>
+    </li>
+  </ul>
+</div>

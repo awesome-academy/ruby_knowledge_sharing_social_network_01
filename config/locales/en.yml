@@ -49,3 +49,11 @@ en:
   posts:
     new:
       tag_intruction: "Tag your post (Press ',' to create new tag):"
+
+    post_form:
+      love_button_title: Clink to mark this as favorite post (click again to undo)
+      facebook_button_title: Clink to share this link on Facebook
+      twitter_button_title: Clink to share this link on Twitter
+
+    show:
+      answer: "Answer : "
